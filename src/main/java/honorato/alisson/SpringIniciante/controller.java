@@ -15,7 +15,7 @@ public class controller {
     @GetMapping("/boasvindas")
 
     public String boasVindas() {
-        return "Essa é minha primeira mensagem nessa rota, ai ai essa porta fica dando erro toda hora tenho que ficar matando toda hora o processo da porta 8080 por que fica toda aberta.";
+        return "Essa é minha primeira mensagem nessa rota, ai ai essa porta fica dando erro toda hora, tenho que ficar matando toda hora o processo da porta 8080, por que fica sempre aberta.";
     }
 
 }
