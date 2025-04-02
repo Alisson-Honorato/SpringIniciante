@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 @JavaBean
 
-public class controller {
+public class ProfissionalController {
 
     @GetMapping("/boasvindas")
 
