@@ -1,4 +1,4 @@
-package honorato.alisson.SpringIniciante;
+package honorato.alisson.SpringIniciante.Profissional;
 
 
 import java.beans.JavaBean;

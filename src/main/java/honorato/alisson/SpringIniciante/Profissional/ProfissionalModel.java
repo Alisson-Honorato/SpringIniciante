@@ -1,15 +1,20 @@
-package honorato.alisson.SpringIniciante;
+package honorato.alisson.SpringIniciante.Profissional;
 
+
+
+import honorato.alisson.SpringIniciante.Works.WordModel;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 // Entity transforma uma classe em uma entidade DB 
 // JPA = java Persistence API
 @Entity
-@Table(name = "Tb Cadastro de Profissionais")
+@Table(name = "tb_cadastro_de_profissionais")
 public class ProfissionalModel {
 
     @Id
@@ -20,8 +25,12 @@ public class ProfissionalModel {
     private String email;
     private String gênero;
     private int data_nascimento;
-   
-   
+    
+    // @ManyToOn - Um profissional pode ter um trabalho
+    @ManyToOne
+    // Foreing Key ou Chave Estrangeira
+    @JoinColumn(name = "works_id")   
+    private WordModel works; 
     
     public ProfissionalModel() {
     }
