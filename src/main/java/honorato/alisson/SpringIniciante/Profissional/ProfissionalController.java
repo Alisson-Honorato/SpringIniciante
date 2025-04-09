@@ -2,20 +2,30 @@ package honorato.alisson.SpringIniciante.Profissional;
 
 
 import java.beans.JavaBean;
+import java.util.List;
+import java.util.ArrayList ;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping
 @JavaBean
-
+@RestController
+@RequestMapping("/profissionais")
 public class ProfissionalController {
 
-    @GetMapping("/boasvindas")
+    private List<ProfissionalModel> lista = new ArrayList<>();
+    
+    @GetMapping
+    public List<ProfissionalModel> listarProfissionais() {
+        return lista;
+    }
 
-    public String boasVindas() {
-        return "Essa é minha primeira mensagem nessa rota, ai ai essa porta fica dando erro toda hora, tenho que ficar matando toda hora o processo da porta 8080, por que fica sempre aberta.";
+    @PostMapping
+    public String adicionarProfissional (@RequestBody ProfissionalModel profissional){
+        lista.add(profissional);
+        return "Profissional adicionado: " + profissional.getNome();
     }
 
 }
